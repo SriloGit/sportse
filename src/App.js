@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import Dashboard from './components/dashboard'
+import Header from './components/header'
+import NavLeft from './components/navleft'
+import { React, /*useEffect, useState*/ } from "react"
+//import axios from "axios"
+//import { useSearchParams } from "react-router-dom"
+import ApiHook from './services/apihook';
 
 function App() {
+
+  const data = ApiHook(18)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <NavLeft />
+        <Dashboard userfirstName={data}/>
+      </main>
     </div>
   );
 }
