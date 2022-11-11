@@ -64,7 +64,7 @@ function Profil(){
     
     return(
         <main>
-            {userData !== undefined && userData.userInfos !== undefined &&
+            {userData !== undefined &&
             <>
                 <NavLeft/>
                 <Dashboard userData={userData} activity={userDataActivity} performance={userDataPerformance} average={userDataAverage} keyData={userKeyData}/>

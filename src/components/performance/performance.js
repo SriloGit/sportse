@@ -31,7 +31,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
         return (
                 <ResponsiveContainer>
                     
-                    <RadarChart margin={{ top: 30, right: 30, bottom: 30, left: 70 }} style={{backgroundColor: "#282D30",borderRadius: "5px"}}  data={performance} >
+                    <RadarChart margin={{ top: 30, right: 30, bottom: 30, left: 70 }} style={{backgroundColor: "#282D30",borderRadius: "5px"}}  data={performance.performance} >
     
                         <PolarGrid radialLines={false} />
     

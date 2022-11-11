@@ -60,7 +60,7 @@ function Average({average}){
 
     return (
         <ResponsiveContainer>
-            <LineChart style={{backgroundColor: "#FF0000", borderRadius: "5px"}} data={average} margin={{top: 50, right: -2, left: -60, bottom: 10 }}>    
+            <LineChart style={{backgroundColor: "#FF0000", borderRadius: "5px"}} data={average.average} margin={{top: 50, right: -2, left: -60, bottom: 10 }}>    
                     
                 <CartesianGrid  vertical={false} horizontal={false}/>
 

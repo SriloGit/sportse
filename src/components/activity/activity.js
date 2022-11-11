@@ -43,7 +43,7 @@ function Activity({activity}){
     return (
         <>
             <ResponsiveContainer>
-                <BarChart data={activity} barGap={8}
+                <BarChart data={activity.activity} barGap={8}
                     margin={{ top: 65, right: 30, bottom: 20, left: 0 }}
                 >
                     <CartesianGrid strokeDasharray='3' vertical={false} />

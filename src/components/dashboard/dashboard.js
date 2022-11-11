@@ -29,7 +29,7 @@ function Dashboard({userData, activity, performance, average, keyData}){
                             <Performance performance={performance}/>
                         </div>
                         <div className='userData_Graph_Score'>
-                            <Score score={userData}/>
+                            <Score score={keyData}/>
                         </div>
                     </div>
                 </div>

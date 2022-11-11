@@ -26,7 +26,7 @@ function Score({score}){
 
             <RadialBar  background dataKey="uv" angleAxisId={1} fill="var(--red)" cornerRadius="10" data={[data[0]]} />
 
-            <text className='scoreSize' fontWeight="700" fontSize={26} fill='#282D30' x="50%" y="45%" textAnchor='middle'>{`${score}%`}</text>
+            <text className='scoreSize' fontWeight="700" fontSize={26} fill='#282D30' x="50%" y="45%" textAnchor='middle'>{`${score.score}%`}</text>
 
             <text className='graphTitle' fontWeight="500"  fill='#74798C' x="50%" y="55%" textAnchor='middle'>de votre</text>
 

@@ -19,7 +19,7 @@ const userKeyData = (user) =>{
 
 const userAverage = (user) =>{
     const userAverageData ={
-        session: user.sessions
+        average: user.sessions
     }
     return userAverageData
 }
