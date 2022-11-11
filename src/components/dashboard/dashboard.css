@@ -1,0 +1,56 @@
+.Dashboard {
+    padding-left: min(100px, 4%);
+    padding-right: min(90px, 4%);
+    padding-top: min(70px, 4%);
+    width: 100%;
+  }
+  
+  .greeting {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 24px;
+  }
+  
+  .congratulation {
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .userData{
+    display: flex;
+  }
+
+  .userData_Graph{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .userData_Graph_Activity{
+    width: 100%;
+    height: 320px;
+  }
+
+  .userData_Graph_Small{
+    display: flex;
+    width: 100%;
+  }
+
+  .userData_Graph_Average{
+    width: 33%;
+    height: 260px;
+  }
+
+  .userData_Graph_Performance{
+    width: 33%;
+    height: 260px;
+    margin-left: 20px;
+  }
+
+  .userData_Graph_Score{
+    width: 33%;
+    height: 260px;
+    margin-left: 20px;
+  }

@@ -1,23 +1,25 @@
 import './styles/App.css';
-import Dashboard from './components/dashboard'
-import Header from './components/header'
-import NavLeft from './components/navleft'
-import { React, /*useEffect, useState*/ } from "react"
-//import axios from "axios"
-//import { useSearchParams } from "react-router-dom"
-import ApiHook from './services/apihook';
+import Profil from './page/profil'
+import Error from './page/error'
+import Header from './components/header/header'
+import { React } from "react"
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 function App() {
 
-  const data = ApiHook(18)
-
   return (
     <div className="App">
-      <Header />
-      <main>
-        <NavLeft />
-        <Dashboard userfirstName={data}/>
-      </main>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Navigate replace to='/user/12' />} />
+          <Route path='/user/:id' element={<Profil />} />
+          <Route path='/user/:id/activity' element={<Profil />} />
+          <Route path='/user/:id/average-sessions' element={<Profil />} />
+          <Route path='/user/:id/performance' element={<Profil />} />
+          <Route path='/*' element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,36 @@
+
+
+.header {
+    height: 91px;
+    width: 100%;
+    background-color: var(--menu-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .header img {
+    margin-left: 30px;
+  }
+  
+  .header nav {
+    width: 100%;
+  }
+  
+  .header ul {
+    color: white;
+    list-style: none;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 90px;
+  }
+  
+  .header_Link{
+    text-decoration: none;
+    color: #FFFFFF;
+  }

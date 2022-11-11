@@ -1,0 +1,29 @@
+.navLeft {
+    min-width: 117px;
+    background-color: var(--menu-background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    color: white;
+    position: relative;
+    padding-top: 150px;
+    height: 1024px;
+  }
+  
+  .navLeft p {
+    transform: rotate(-90deg);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    width: 140px;
+    margin-bottom: 60px;
+    margin-top: 164px;
+  }
+  
+  .navLeft img {
+    width: 64px;
+    height: 64px;
+  }
+  
