@@ -1,75 +1,56 @@
 import Dashboard from "../components/dashboard/dashboard"
 import NavLeft from "../components/navleft/navleft"
-import  MockedHook  from '../services/mockedhook'
-import  ApiHook  from '../services/apihook'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams} from 'react-router-dom'
+import dataUser from "../services/fetchmocked"
+//import dataUser from "../services/fetchapi.js"
 
 function Profil(){
-    const [userData, setData] = useState([]);
-    const [userDataActivity, setDataActivity] = useState([]);
-    const [userDataAverage, setDataAverage] = useState([]);
-    const [userDataPerformance, setDataPerformance] = useState([]);
-    const [userKeyData, setDataKeyData] = useState([])
-    const { id } = useParams();
-    let apiData = true;
-    
 
-   useEffect(() => {
-        if (apiData) {
-            ApiHook().getUserInfos(id).then(user => setData(user));
-            ApiHook().getUserKeyData(id).then(user => setDataKeyData(user));
-            ApiHook().getUserActivity(id).then(activity => setDataActivity(activity));
-            ApiHook().getUserAverage(id).then(session => setDataAverage(session));
-            ApiHook().getUserPerformance(id).then(performance => setDataPerformance(performance));
-        }
-        else {
-            MockedHook().getUserInfos(id).then(user => {
-                user.forEach((item) => {
-                    if (item.id.toString() === id) {
-                        setData(item);
-                    }
-                })
-            });
-            MockedHook().getUserKeyData(id).then(keyData => {
-                keyData.forEach((item) => {
-                    if (item.id.toString() === id) {
-                        setDataKeyData(item);
-                    }
-                })
-            });
-            MockedHook().getUserActivity(id).then(activity => {
-                activity.forEach((item) => {
-                    if (item.userId.toString() === id) {
-                        setDataActivity(item);
-                    }
-                })
-            });
-            MockedHook().getUserAverage(id).then(session => {
-                session.forEach((item) => {
-                    if (item.userId.toString() === id) {
-                        setDataAverage(item);
-                    }
-                })
-            });
-            MockedHook().getUserPerformance(id).then(performance => {
-                performance.forEach((item) => {
-                    if (item.userId.toString() === id) {
-                        setDataPerformance(item);
-                    }
-                })
-            });
-        }
-    }, [id, apiData]);
+    const {id} = useParams()
+    const {categorie} = useParams()
+    const [userMain, setUserMain] = useState()
+    const [userActivity, setUserActivity] = useState()
+    const [userSessions, setUserSessions] = useState()
+    const [userPerformance, setUserPerformance] = useState()
     
+    useEffect(() => {
+        dataUser(id,categorie)
+
+            .then(data => {
+                if (typeof data !== "undefined") {
+                    setUserMain(data)
+
+                    dataUser(id, "activity")
+                    .then(data => setUserActivity(data))
+                    .catch(error => console.log("erreur activity",error))
+
+                    dataUser(id, "average-sessions")
+                    .then(data => setUserSessions(data))
+                    .catch(error => console.log("erreur sessions", error))
+
+                    dataUser(id, "performance")
+                    .then(data => setUserPerformance(data))
+                    .catch(error => console.log("erreur performance", error))
+                    
+                }
+                else{
+                    <Navigate replace to='/error' />
+                }
+            })
+
+            .catch(error => console.log("erreur données id", error))
+    },
+    [id, categorie])
+    
+    if (!userMain || !userActivity || !userSessions || !userPerformance) {
+        return null
+    }
+
     return(
         <main>
-            {userData !== undefined &&
-            <>
                 <NavLeft/>
-                <Dashboard userData={userData} activity={userDataActivity} performance={userDataPerformance} average={userDataAverage} keyData={userKeyData}/>
-            </>
-}
+                <Dashboard userData={userMain} activity={userActivity} performance={userPerformance} average={userSessions} keyData={userMain}/>
         </main>
     )
 }

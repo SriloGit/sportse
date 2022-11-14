@@ -2,19 +2,13 @@ const userInfos = (user) => {
         const userInfosData = {
             id : user.id,
             firstName : user.userInfos.firstName,
-        }
-        return userInfosData
-    }
-
-const userKeyData = (user) =>{
-        const userKeyDataModel ={
             score: user.score?user.score * 100 : user.todayScore * 100,
             calorie: user.keyData.calorieCount,
             protein: user.keyData.proteinCount,
             carbs: user.keyData.carbohydrateCount,
             lipid: user.keyData.lipidCount
         }
-        return userKeyDataModel
+        return userInfosData
     }
 
 const userAverage = (user) =>{
@@ -38,4 +32,4 @@ const userActivity = (user) =>{
     return userActivityData
 }
 
-export {userInfos, userKeyData, userAverage, userPerformance, userActivity}
+export {userInfos, userAverage, userPerformance, userActivity}
