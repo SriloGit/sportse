@@ -1,14 +1,14 @@
 import './score.css'
 import { RadialBarChart, RadialBar,  ResponsiveContainer, PolarAngleAxis } from 'recharts'
+import PropTypes from 'prop-types'
 
+/**
+ * Display of a user's score as a percentage
+ * @component
+ * @param {number} score - datas scores
+ * @returns component jsx - chart
+ */
 function Score({score}){
-  /*let scoreData
-  if (score.score !== undefined){
-    scoreData = score.score * 100
-  }
-  else{
-    scoreData = score.todayScore * 100
-  }*/
     const data = 
     [{
       uv: score.score,
@@ -38,6 +38,10 @@ function Score({score}){
           </RadialBarChart>
         </ResponsiveContainer>
     );
+}
+
+Score.propTypes = {
+  score: PropTypes.object,
 }
 
 export default Score

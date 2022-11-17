@@ -5,6 +5,11 @@ import { Navigate, useParams} from 'react-router-dom'
 import dataUser from "../services/fetchmocked"
 //import dataUser from "../services/fetchapi.js"
 
+/**
+ * Header
+ * @component
+ * @returns component jsx
+ */
 function Profil(){
 
     const {id} = useParams()

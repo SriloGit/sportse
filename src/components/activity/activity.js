@@ -1,15 +1,14 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from 'recharts'
 import './activity.css'
+import PropTypes from 'prop-types'
 
+/**
+ * Display daily kilogram and calorie result of a user
+ * @component
+ * @param {array} activity - array datas activity 
+ * @returns component jsx - chart
+ */
 function Activity({activity}){
-    /*const activitySessions = activity.sessions;
-    let tab = [];
-
-    if (activitySessions) {
-        activitySessions.map(session => {
-            return tab.push(session);
-        })
-    }*/
 
     const formatXAxis = (i) => i + 1;
 
@@ -90,6 +89,10 @@ function Activity({activity}){
             </ResponsiveContainer>
         </>
     )
+}
+
+Activity.propTypes = {
+    activity: PropTypes.object,
 }
 
 export default Activity

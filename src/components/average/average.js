@@ -1,5 +1,6 @@
 import './average.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,  ResponsiveContainer, Rectangle } from 'recharts'
+import PropTypes from 'prop-types'
 
 /**
  * @param {boolean}  [Props.active='true']
@@ -48,15 +49,13 @@ function nameDay(day){
     }
 }
 
+/**
+ * Display user's daily activity chart 
+ * @component
+ * @param {Array} average - array datas session
+ * @returns component jsx - chart
+ */
 function Average({average}){
-    /*const activitySessions = average.sessions;
-    let tab = [];
-
-    if (activitySessions) {
-        activitySessions.map(session => {
-            return tab.push(session);
-        })
-    }*/
 
     return (
         <ResponsiveContainer>
@@ -82,6 +81,10 @@ function Average({average}){
             </LineChart>
         </ResponsiveContainer>
     );
+}
+
+Average.propTypes = {
+    average: PropTypes.object,
 }
 
 export default Average

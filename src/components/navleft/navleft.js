@@ -5,6 +5,11 @@ import weight from "../../assets/weight.png";
 import { Link } from 'react-router-dom'
 import './navleft.css'
 
+/**
+ * Header
+ * @component
+ * @returns component jsx
+ */
 function NavLeft(){
     return(
         <div className="navLeft">

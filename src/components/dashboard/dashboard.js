@@ -8,7 +8,18 @@ import Calorie from "../../assets/calories-icon.png";
 import Carbs from "../../assets/carbs-icon.png";
 import Fat from "../../assets/fat-icon.png";
 import Protein from "../../assets/protein-icon.png";
+import PropTypes from 'prop-types'
 
+/**
+ * Dashboard
+ * @component
+ * @param {array} userData - array datas user
+ * @param {array} activity - array datas activity
+ * @param {array} performance - array datas performance
+ * @param {array} average - array datas session
+ * @param {array} keyData - array datas user
+ * @returns component jsx
+ */
 function Dashboard({userData, activity, performance, average, keyData}){
     return(
         <div className="Dashboard">
@@ -50,6 +61,14 @@ function Dashboard({userData, activity, performance, average, keyData}){
             </div>
         </div>
     )
+}
+
+Dashboard.propTypes = {
+    userData: PropTypes.object,
+    activity: PropTypes.object,
+    performance: PropTypes.object,
+    average: PropTypes.object,
+    keyData: PropTypes.object,
 }
 
 export default Dashboard

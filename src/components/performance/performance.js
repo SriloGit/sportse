@@ -1,5 +1,6 @@
 import './performance.css'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts'
+import PropTypes from 'prop-types'
 
     function namePerf(kind){
         switch(kind){
@@ -20,14 +21,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
      */
     
     const Performance = ({performance}) => {
-        /*const performanceData = performance.data;
-        let tab = [];
-
-        if (performanceData) {
-            performanceData.map(data => {
-                return tab.push(data);
-            })
-        }*/
         return (
                 <ResponsiveContainer>
                     
@@ -46,4 +39,8 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
         );
     };
 
+    Performance.propTypes = {
+        performance: PropTypes.object,
+    }
+    
 export default Performance

@@ -2,9 +2,9 @@ import {userMainData, userActivityData, userAverageSessionsData, userPerformance
 import {userInfos, userAverage, userPerformance, userActivity} from "../models/model"
 
 /**
- * retrieve the mocked data and create a new class
+ * retrieve the mocked data
  * @param {number} id 
- * @returns new class data
+ * @returns array with the correct data
  */
 function getUserMainData(id) {
     const data = userMainData.find(value => value.id.toString() === id);
