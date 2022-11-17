@@ -2,11 +2,11 @@
 SportSee project is an application to follow the daily progress through analytics dashboard.
 
 ## Prerequisites
-NodeJS (v16.17.0)  
-NPM (8.15.0) 
+NodeJS  
+NPM 
 React (v18.2.0)   
-React Router Dom (v6.3.0)  
-Recharts (v2.1.13)  
+React Router Dom (v6.4.2)  
+Recharts (v2.1.16)  
 
 npm install
 
@@ -31,7 +31,7 @@ This project was bootstrapped with Create React App.
 - Uncomment the import dataUser you want to use (fetchMocked or fetchApi) and comment the other one
 - Follow the instuctions below
 
-## NOTA : 2 users have been created
+## NOTA : 4 users have been created
     id 12 and 18
 
 
