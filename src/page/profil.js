@@ -21,9 +21,7 @@ function Profil(){
     
     useEffect(() => {
         dataUser(id,categorie)
-
             .then(data => {
-                if (typeof data !== "undefined") {
                     setUserMain(data)
 
                     dataUser(id, "activity")
@@ -37,17 +35,7 @@ function Profil(){
                     dataUser(id, "performance")
                     .then(data => setUserPerformance(data))
                     .catch(error => console.log("erreur performance", error))
-                    
-                }
-                else{
-                    return(
-                    <>
-                    <Navigate replace to='/error' />
-                    </>
-                    )
-                }
             })
-
             .catch(error => console.log("erreur données id", error))
     },
     [id, categorie])
