@@ -2,8 +2,8 @@ import Dashboard from "../components/dashboard/dashboard"
 import NavLeft from "../components/navleft/navleft"
 import { useEffect, useState } from 'react'
 import { Navigate, useParams} from 'react-router-dom'
-import dataUser from "../services/fetchmocked"
-//import dataUser from "../services/fetchapi.js"
+//import dataUser from "../services/fetchmocked"
+import dataUser from "../services/fetchapi.js"
 
 /**
  * Header
@@ -40,7 +40,11 @@ function Profil(){
                     
                 }
                 else{
+                    return(
+                    <>
                     <Navigate replace to='/error' />
+                    </>
+                    )
                 }
             })
 

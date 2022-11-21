@@ -85,6 +85,7 @@ function Activity({activity}){
                         }}
                         align='right' iconSize={8} iconType='circle'
                     />
+                    <text className='graphTitle' x="8%" y="12%" width={147} height={48}  fill="#000000" style={{fontWeight:500}} > Activité quotidienne</text>
                 </BarChart>
             </ResponsiveContainer>
         </>

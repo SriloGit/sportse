@@ -1,6 +1,8 @@
 function Error(){
     return(
-        <p>Page 404</p>
+        <div className="wrapper404">
+            <p className="secondary-color">Page 404</p>
+        </div>
     )
 }
 

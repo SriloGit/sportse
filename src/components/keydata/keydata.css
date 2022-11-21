@@ -3,6 +3,12 @@
     height: 80px;
     margin-right: 20px;
 }
+
+.keydata_Data_data{
+    font-weight: 700;
+    font-size: 20px;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1300px) {
     .keydata_Icon img{
         margin-left: -20px;
