@@ -50,5 +50,6 @@ main {
   justify-content: center;
   height: 720px;
   align-items: center;
-  font-weight: bold;
+  font-weight: bold;  
+  width: 100%;
 }

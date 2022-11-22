@@ -1,7 +1,8 @@
 import Dashboard from "../components/dashboard/dashboard"
 import NavLeft from "../components/navleft/navleft"
 import { useEffect, useState } from 'react'
-import { Navigate, useParams} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
+import Error from "./error";
 //import dataUser from "../services/fetchmocked"
 import dataUser from "../services/fetchapi.js"
 
@@ -18,7 +19,8 @@ function Profil(){
     const [userActivity, setUserActivity] = useState()
     const [userSessions, setUserSessions] = useState()
     const [userPerformance, setUserPerformance] = useState()
-    
+    const [errorApi, setErrorApi] = useState(false);
+
     useEffect(() => {
         dataUser(id,categorie)
             .then(data => {
@@ -36,18 +38,28 @@ function Profil(){
                     .then(data => setUserPerformance(data))
                     .catch(error => console.log("erreur performance", error))
             })
-            .catch(error => console.log("erreur données id", error))
-    },
-    [id, categorie])
+            .catch(error => {
+                 console.log("erreur données id", error);
+                 setErrorApi(true);
+            })
+    }, [id, categorie])
     
     if (!userMain || !userActivity || !userSessions || !userPerformance) {
+        if(errorApi) {
+            return (
+                <main>
+                    <Error />
+                </main>
+            )
+        }
         return null
     }
 
     return(
         <main>
                 <NavLeft/>
-                <Dashboard userData={userMain} activity={userActivity} performance={userPerformance} average={userSessions} keyData={userMain}/>
+                {errorApi ? <Error /> : 
+                <Dashboard userData={userMain} activity={userActivity} performance={userPerformance} average={userSessions} keyData={userMain}/> }
         </main>
     )
 }
